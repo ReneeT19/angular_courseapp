@@ -1,0 +1,20 @@
+.course {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: 15em;
+}
+
+.course li {
+    position: relative;
+    cursor: pointer;
+    background-color: rgb(245, 237, 228);
+    margin: 1em;
+    padding: .3em 0;
+    height: 3em;
+    border-radius: 4px;
+}
+
+.course li:hover {
+    background-color: rgb(250, 232, 210);
+}
