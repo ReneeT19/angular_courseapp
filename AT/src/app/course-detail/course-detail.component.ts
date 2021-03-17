@@ -1,3 +1,4 @@
+import { COURSES } from './../mock-courses';
 import { CourseService } from './../course.service';
 import { Course } from './../course';
 import { Component, OnInit, Input } from '@angular/core';
@@ -12,23 +13,17 @@ import { switchMap } from "rxjs/operators";
 export class CourseDetailComponent implements OnInit {
   id: number;
   name: string;
-  private sub: any;
-  data:any;
-
-  @Input() course: Course;
-  constructor(private courseService: CourseService, private route: ActivatedRoute) { }
+  COURSES: [];
+  
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-
+      
       this.route.paramMap.subscribe((params: ParamMap) => {
         this.id = +params.get('id');
       });
+      this.name = COURSES[this.id-1].name;
     }
-      // this.name = this.route.snapshot.queryParamMap.get("name")
-      // this.route.queryParamMap.subscribe(queryParams => {
-      //   this.name = queryParams.get("name")
-      // })
-
 }
 
 

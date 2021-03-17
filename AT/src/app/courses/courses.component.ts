@@ -32,4 +32,5 @@ export class CoursesComponent implements OnInit {
   getCourses(): void{
     this.CourseService.getCourses().subscribe(courses => this.courses = courses);
   }
+
 }
